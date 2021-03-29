@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+
+import NotFoundPage from "./Views/NotFoundPage/NotFoundPage";
+import AllPeople from "./Views/AllPeople/AllPeople";
+import PeopleInfo from "./Views/MorInfo/PeopleInfo";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App bg-dark">
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={AllPeople} />
+        <Route path="/peopleInfo" component={PeopleInfo} />
+        <Route component={NotFoundPage} />
+      </Switch>
+      <Footer />
     </div>
   );
 }
