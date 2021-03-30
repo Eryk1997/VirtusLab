@@ -52,22 +52,17 @@ export default class PeopleInfo extends Component {
   show() {
     this.state.films.push(this.state.pom);
 
-    let elements = this.state.films.slice(0, this.state.films.length).map((post) => Frame(post));
+    let elements = this.state.films
+      .slice(0, this.state.films.length)
+      .map((post) => Frame(post));
     this.setState({ elements: elements });
   }
-
-  /*
-  async getFilm(url) {
-    const response = await axios.get(url);
-    return response.data.title;
-  }
-  */
 
   render() {
     return (
       <div class="container mt-5">
         <div class="row justify-content-md-center">
-          <div class="card bg-secondary text-warning col-4">
+          <div class="card bg-secondary text-warning col-sm-12 col-md-6 col-lg-3">
             <div class="col-md-auto">Name: {this.state.personInfo.name}</div>
             <div class="col-md-auto">
               Gender: {this.state.personInfo.gender}
@@ -83,9 +78,7 @@ export default class PeopleInfo extends Component {
             </div>
           </div>
           <div className="col-12 mt-3 text-warning">Title of the films</div>
-          <div className="row col-12" id="padding-lef">
-            {this.state.elements}
-          </div>{" "}
+          <div className="row col-12 ">{this.state.elements}</div>{" "}
         </div>
       </div>
     );

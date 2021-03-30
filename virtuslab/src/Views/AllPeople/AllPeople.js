@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import config from "../../Configuration/config";
 import Frame from "./Frame";
-import ReactPaginate from "react-paginate";
 import "./style.css";
 
 export default class AllPeople extends Component {
@@ -68,7 +67,6 @@ export default class AllPeople extends Component {
     }));
 
     this.receiveData(page, pomPerPage);
-
   }
 
   render() {
@@ -78,7 +76,11 @@ export default class AllPeople extends Component {
           {this.state.elements}
         </div>
 
-        <button type="button" className="mt-5 mb-5 btn btn-outline-warning" onClick={this.Click}>
+        <button
+          type="button"
+          className="mt-5 mb-5 btn btn-outline-warning"
+          onClick={this.Click}
+        >
           More
         </button>
       </div>
